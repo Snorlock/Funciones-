@@ -4,7 +4,7 @@ using namespace std;
 // Declaracion de funciones 
 void suma(int a,int b, int c);
 void producto(int a, int b, int c);
-void division(int a, int b, int c);
+float division(float a, float b);
 void resta(int a, int b, int c);
 // Funcion principal
 int main(){
@@ -18,7 +18,8 @@ int main(){
 	// Operaciones basicas 
 	suma(a,b,c);
 	producto(a,b,c);
-    division(a,b,c);
+    float resultado = division(a,b);
+    cout << "La division es \n" << resultado;
     resta(a,b,c);
 }
 // Cuerpos de funciones por bloque
@@ -30,9 +31,14 @@ void producto(int a,int b, int c){
 	int p= a * b * c;
    cout << "El producto es:\n " << p << endl;
 }
-void division(int a, int b, int c){
-	float d=(float)a / b / c;
-	cout << "La division es: \n" << d << endl;
+float division(float a, float b){
+	float d=b;
+        while(d==0){
+	cout << "El segundo no puede ser 0" << endl;
+        cout << "Introduce otro valor diferente";
+        cin >> d;
+} 
+return a / d;
 }
 void resta(int a, int b, int c){
 	int r= a - b - c;
